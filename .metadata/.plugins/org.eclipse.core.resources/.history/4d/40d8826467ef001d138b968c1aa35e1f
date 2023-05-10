@@ -1,0 +1,53 @@
+package com.ecommerce.onlineshopping.service.impl;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ecommerce.onlineshopping.model.Bill;
+import com.ecommerce.onlineshopping.repository.BillRepository;
+import com.ecommerce.onlineshopping.service.BillService;
+
+@Service
+public class BillServiceImpl implements BillService {
+
+	@Autowired
+	private BillRepository billRepository;
+	
+	// Add Bill Details
+	@Override
+	public Bill addBillDetails(Bill bill) {
+        
+	Bill saveBill = billRepository.save(bill);
+		
+		return saveBill;
+	}
+
+	//Get Bill Details
+	
+	@Override
+	public Bill getBillDetails(Integer id) {
+		
+		Optional<Bill> optional = billRepository.findById(id);
+		Bill bill =optional.get();
+		
+		return bill;
+	}
+
+	//Update Bill Details
+	
+	@Override
+	public Bill updateBillDetails(Bill bill, Integer id) {
+		
+		Bill oldBill = billRepository.findById(id).get();
+		
+		oldBill.setBillCode(bill.getBillCode());
+		oldBill.setBillName(bill.getBillName());
+		oldBill.setBillCom(bill.getBillCom());
+		oldBill.setBillNum(bill.getBillNum());
+		oldBill.setMoney(bill.getMoney());
+		return oldBill;
+	}
+
+}

@@ -1,0 +1,25 @@
+package com.ecommerce.onlineshopping.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ecommerce.onlineshopping.model.Bill;
+import com.ecommerce.onlineshopping.service.BillService;
+import com.ecommerceonlineshopping.repository.BillRepository;
+
+@Service
+public class BillServiceImpl implements BillService {
+
+	@Autowired
+	private BillRepository billRepository;
+	
+	// Add Bill Details
+	@Override
+	public Bill addBillDetails(Bill bill) {
+        
+		Bill b = billRepository.save(bill);
+		
+		return b;
+	}
+
+}

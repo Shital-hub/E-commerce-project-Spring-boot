@@ -1,0 +1,9 @@
+package com.ecommerceonlineshopping.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.ecommerce.onlineshopping.model.Bill;
+
+public interface BillRepository extends CrudRepository<Bill,Integer>{
+
+}

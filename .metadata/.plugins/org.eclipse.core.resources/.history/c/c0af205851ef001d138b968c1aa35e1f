@@ -1,0 +1,5 @@
+package com.ecommerceonlineshopping.repository;
+
+public interface BillRepository {
+
+}

@@ -1,0 +1,11 @@
+package com.ecommerce.onlineshopping.service;
+
+import com.ecommerce.onlineshopping.model.Bill;
+
+public interface BillService {
+	
+	//Add bill details
+	
+	public Bill addBillDetails(Bill bill);
+
+}
