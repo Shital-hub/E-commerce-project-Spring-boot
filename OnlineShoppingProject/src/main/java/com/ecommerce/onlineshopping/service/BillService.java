@@ -16,4 +16,6 @@ public interface BillService {
 	//Update Bill Details
 	
 	public Bill updateBillDetail(Bill bill,Integer id);
+	
+	
 }

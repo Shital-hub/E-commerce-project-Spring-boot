@@ -1,14 +1,12 @@
 
-
-
-
-
 package com.ecommerce.onlineshopping.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,7 +22,10 @@ public class Bill {
 	private int billNum;
 	private double money;
 	
+	@OneToOne(targetEntity = Provider.class,cascade = CascadeType.ALL)
+	private Provider provider;
 	
+	private int paymentId;
 	
 	public Bill() {
 	
@@ -76,6 +77,22 @@ public class Bill {
 
 	public void setMoney(double money) {
 		this.money = money;
+	}
+
+	public Provider getProvider() {
+		return provider;
+	}
+
+	public void setProvider(Provider provider) {
+		this.provider = provider;
+	}
+
+	public int getPaymentId() {
+		return paymentId;
+	}
+
+	public void setPaymentId(int paymentId) {
+		this.paymentId = paymentId;
 	}
 
 		 

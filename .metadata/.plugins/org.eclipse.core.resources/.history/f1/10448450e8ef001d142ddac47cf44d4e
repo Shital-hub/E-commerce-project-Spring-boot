@@ -1,0 +1,23 @@
+package com.ecommerce.onlineshopping.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ecommerce.onlineshopping.model.Feedback;
+import com.ecommerce.onlineshopping.repository.FeedBackRepository;
+import com.ecommerce.onlineshopping.service.FeedbackService;
+
+@Service
+public class FeedBackServiceImpl implements FeedbackService {
+
+	@Autowired
+	private FeedBackRepository feedBackRepository;
+
+	// Add feedback Message
+	@Override
+	public Feedback addFeddbackMessage(Feedback feedback) {
+		Feedback addMessage = feedBackRepository.save(feedback);
+		return addMessage;
+	}
+
+}

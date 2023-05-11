@@ -1,0 +1,10 @@
+package com.ecommerce.onlineshopping.model;
+
+import javax.persistence.OneToOne;
+
+public class Provider {
+
+	
+	@OneToOne
+	private Bill bill;
+}

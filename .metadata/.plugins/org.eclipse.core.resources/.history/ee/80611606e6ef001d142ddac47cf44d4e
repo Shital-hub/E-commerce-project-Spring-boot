@@ -1,0 +1,5 @@
+package com.ecommerce.onlineshopping.service;
+
+public interface FeedbackService {
+
+}
